@@ -11,13 +11,40 @@ To prevent misuse, it has a built-in check which prevents the program from worki
 
 ## How do I install it?
 
-**Issues according installation will be closed without ceremony from now on, we cannot handle the amount of requests.**
+**Issues according to installation will be closed without ceremony from now on, we cannot handle the number of requests.**
 
-There are two types of installations: basic and gpu-powered.
+There are two types of installations: basic and GPU-powered.
 
-- **Basic:** It is more likely to work on your computer but it will also be very slow. You can follow instructions for the basic install [here](https://github.com/s0md3v/roop/wiki/1.-Installation).
+- **Basic:** It is more likely to work on your computer but it will also be very slow. You can follow the instructions for the basic install [here](https://github.com/s0md3v/roop/wiki/1.-Installation).
 
 - **GPU:** If you have a good GPU and are ready for solving any software issues you may face, you can enable GPU which is wayyy faster. To do this, first follow the basic install instructions given above and then follow GPU-specific instructions [here](https://github.com/s0md3v/roop/wiki/2.-GPU-Acceleration).
+
+- For windows guys: 
+1) install visual studio 2022 with desktop development C++ and python development (not sure about python development)
+2) install python 3.10.x (any 3.10)
+3) download the last version of roop
+4) pip install virtualenv
+5) virtualenv venv
+6) start venv\scripts\activate.bat
+7) pip install -r requirements.txt
+that's for CPU (sometimes works for GPU for some reason)
+
+- If you want Nvidia gpu to work:
+don't go for CPU steps
+1) install visual studio 2022 with desktop development C++ and Python development (not sure about Python development)
+2) install cuda 11.7 (https://developer.nvidia.com/cuda-11-7-0-download-archive)
+3) download cudnn 8.9.1 for cuda 11.x https://developer.nvidia.com/rdp/cudnn-archive
+4) unpack cudnn over C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7 with replacement
+5) install python 3.10.x (any 3.10)
+6) download the last version of roop
+7) pip install virtualenv
+8) virtualenv venv
+9) start venv\scripts\activate.bat
+10) pip install torch torchvision torchaudio --force-reinstall --index-url https://download.pytorch.org/whl/cu117
+11) pip install -r requirements.txt
+
+and yes, don't forget to download ffmpeg https://ffmpeg.org/download.html
+and inswrapper_128.onnx https://drive.google.com/file/d/1eu60OrRtn4WhKrzM4mQv4F3rIuyUXqfl/view?usp=drive_link
 
 ## How do I use it?
 > Note: When you run this program for the first time, it will download some models ~300MB in size.
